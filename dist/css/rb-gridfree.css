@@ -23,6 +23,10 @@
 	margin: -0.125em;
 }
 
+.rb-container .rb-gridfree [data-gridfree-allow-overflow], .rb-container-dark .rb-gridfree [data-gridfree-allow-overflow] {
+	overflow: initial;
+}
+
 .rb-container tr.rb-gridfree, .rb-container-dark tr.rb-gridfree {
 	display: table-row;
 }
