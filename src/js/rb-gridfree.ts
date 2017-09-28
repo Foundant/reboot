@@ -105,7 +105,7 @@ class RBGridFree {
 
 		this.css.resized = true;
 
-		console.log("rb: resizing " + this.css.$blocks.length + " blocks");
+		console.log("rb: resizing " + this.css.$blocks.length + " blocks in instance " + this.instanceId);
 
 		while (this.css.cssRules.length) {
 			this.css.deleteRule(0);
@@ -136,7 +136,7 @@ class RBGridFree {
 			let gridfreeBlock = $(block).data("gridfree-block");
 
 			this.css.insertRule(
-				`[data-gridfree-instance = '${instance}'] [data-gridfree-block = '${gridfreeBlock}'] {
+				`[data-gridfree-instance = "${instance}"] [data-gridfree-block = "${gridfreeBlock}"] {
 					width: calc(${width});
 				}`,
 				0);
@@ -154,17 +154,17 @@ RBCore.observe(".rb-gridfree", function(element: HTMLElement) {
 
 		let $tab = $(element).closest(".rb-tab");
 		$tab.on("tab:open", function() {
-			RBGridFree.instances.forEach(instance => {
-				instance.resetResize();
-				instance.resize();
-			});
+			gridfree.resetResize();
+			gridfree.resize();
 		});
 	}, 0);
 });
 
-$(window).on("resize", function() {
-	RBGridFree.instances.forEach(instance => {
+$(window).resize(function () {
+	RBGridFree.instances.forEach(function (instance) {
 		instance.resetResize();
+	});
+	RBGridFree.instances.forEach(function (instance) {
 		instance.resize();
 	});
 });
