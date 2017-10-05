@@ -26,6 +26,10 @@ class RBTabs {
 			});
 		}
 
+		if ($tabs.find(".rb-open").length === 0) {
+			$tabs.first().addClass(".rb-open");
+		}
+
 		return this;
 	}
 }
