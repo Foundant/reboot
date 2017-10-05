@@ -152,11 +152,11 @@ RBCore.observe(".rb-gridfree", function(element: HTMLElement) {
 		gridfree.initialize();
 		gridfree.resize();
 
-		let $tab = $(element).closest(".rb-tab");
-		$tab.on("tab:open", function() {
-			gridfree.resetResize();
-			gridfree.resize();
-		});
+		// let $tab = $(element).closest(".rb-tab");
+		// $tab.on("tab:open", function() {
+		// 	gridfree.resetResize();
+		// 	gridfree.resize();
+		// });
 	}, 0);
 });
 

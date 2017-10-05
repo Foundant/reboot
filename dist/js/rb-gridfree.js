@@ -103,11 +103,11 @@ RBCore.observe(".rb-gridfree", function (element) {
         var gridfree = new RBGridFree($(element), instanceId);
         gridfree.initialize();
         gridfree.resize();
-        var $tab = $(element).closest(".rb-tab");
-        $tab.on("tab:open", function () {
-            gridfree.resetResize();
-            gridfree.resize();
-        });
+        // let $tab = $(element).closest(".rb-tab");
+        // $tab.on("tab:open", function() {
+        // 	gridfree.resetResize();
+        // 	gridfree.resize();
+        // });
     }, 0);
 });
 $(window).resize(function () {
