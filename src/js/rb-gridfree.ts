@@ -1,11 +1,6 @@
-interface CSSStyleSheet {
-	resized: boolean;
-	$blocks: JQuery;
-	fixedTotal: number;
-	relativeTotal: number;
-}
+import RBCore from "./rb-core.ts";
 
-class RBGridFree {
+export class RBGridFree {
 	static instanceCount: number = 0;
 	static blockCount: number = 0;
 	static instances: RBGridFree[] = new Array();

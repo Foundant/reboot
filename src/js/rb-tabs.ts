@@ -1,4 +1,4 @@
-class RBTabs {
+export class RBTabs {
 	constructor(private $tabset: JQuery) { }
 
 	initialize(): RBTabs {

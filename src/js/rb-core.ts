@@ -1,4 +1,4 @@
-class RBCore {
+export class RBCore {
 	// http://ryanmorr.com/using-mutation-observers-to-watch-for-element-availability/
 	private static observer: MutationObserver;
 	private static listeners: Array<RBCore.RBListener> = [];
@@ -49,9 +49,11 @@ class RBCore {
 	}
 }
 
-namespace RBCore {
+export namespace RBCore {
 	export class RBListener {
 		Selector: string;
 		Function: Function;
 	}
 }
+
+export default RBCore;
